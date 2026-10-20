@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour Wissem ♡</title>
+
+<style>
+:root {
+  --rose: #9b476c;
+  --fond: #fff6fa;
+  --texte: #542d40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  -webkit-text-size-adjust: 100%;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #fff6fa;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  color: #d69ab6;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star:nth-child(2n) {
+  animation-delay: 1.2s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: .25;
+    transform: scale(.8);
+  }
+  50% {
+    opacity: .9;
+    transform: scale(1.25);
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  margin: auto;
+  padding: 38px 22px 50px;
+  text-align: center;
+}
+
+.topline {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  opacity: .7;
+}
+
+.flower {
+  font-size: 28px;
+  margin: 20px 0 6px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 11vw, 82px);
+  font-weight: normal;
+  line-height: 1;
+  margin: 10px 0 14px;
+  color: #9b476c;
+  text-shadow: 0 0 25px #f3c1d7;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.heart {
+  margin: 27px auto;
+  width: 86px;
+  height: 78px;
+  position: relative;
+  animation: beat 1.6s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  left: 43px;
+  top: 4px;
+  width: 42px;
+  height: 66px;
+  border-radius: 42px 42px 0 0;
+  background: #d9789e;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 1px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.card {
+  margin: 26px auto 0;
+  padding: 27px 23px;
+  max-width: 510px;
+  border: 1px solid #efc6d8;
+  border-radius: 18px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 12px 34px rgba(142,70,105,.12);
+}
+
+.card p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  background: var(--rose);
+  color: white;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+  margin: 18px 5px 0;
+  min-height: 46px;
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+button:focus-visible {
+  outline: 3px solid #e6a7c2;
+  outline-offset: 4px;
+}
+
+#letter {
+  display: none;
+  text-align: left;
+  animation: appear .7s ease both;
+}
+
+#letter.show {
+  display: block;
+}
+
+#letter h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  color: #9b476c;
+  text-align: center;
+}
+
+#letter p {
+  margin: 12px 0;
+}
+
+.signature {
+  text-align: right;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 19px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#surprise {
+  display: none;
+  margin: 20px auto 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+#surprise.show {
+  display: block;
+  animation: appear .6s ease both;
+}
+
+footer {
+  margin-top: 36px;
+  font-size: 12px;
+  opacity: .65;
+}
+
+.floating {
+  position: fixed;
+  z-index: 5;
+  bottom: -30px;
+  animation: floatUp 5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Adaptation pour téléphone */
+@media (max-width: 480px) {
+  main {
+    padding: 26px 15px 36px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 15vw, 65px);
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 22px 17px;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
+
+  .card p,
+  #letter p {
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  button {
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 13px 15px;
+  }
+
+  .heart {
+    margin: 20px auto;
+  }
+
+  #surprise {
+    font-size: 16px;
+  }
+
+  footer {
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+  <div class="sky" aria-hidden="true">
+    <span class="star" style="top:12%;left:12%">✦</span>
+    <span class="star" style="top:24%;left:82%">✧</span>
+    <span class="star" style="top:48%;left:8%">✧</span>
+    <span class="star" style="top:66%;left:88%">✦</span>
+    <span class="star" style="top:80%;left:20%">✦</span>
+    <span class="star" style="top:8%;left:65%">✧</span>
+    <span class="star" style="top:39%;left:92%">✦</span>
+    <span class="star" style="top:74%;left:72%">✧</span>
+  </div>
+
+  <main>
+    <div class="topline">7eja khfifa lik</div>
+
+    <div class="flower">୨୧</div>
+
+    <h1>Wissem</h1>
+
+    <p class="subtitle">
+      Lyouma nharek, eya dertlek une petite surprise lik. ♡
+    </p>
+
+    <div class="heart" aria-hidden="true"></div>
+
+    <div class="card">
+
+      <p>
+        ma3reftch cha nechrilek mch3aref mempas cha tebghi...
+        eya j'ai essaye de faire hed la page heda li na3ref ndireh.
+        C'est pas parfait mdr mais j'espère ca te plaira :)
+      </p>
+
+      <button id="openLetter">Ouvre ici 💌</button>
+
+      <div id="letter">
+
+        <h2>Joyeux anniversaire ! 🎂</h2>
+
+        <p>Déjà joyeux anniversaire Wissem !!</p>
+
+        <p>
+          nchallah tu vas passer une super journee, que ghadi profitei
+          et que cette nouvelle année t'apportera plein de bonnes choses.
+          wliti adulte ghadi nweli n3ayetlek madam wissem...heda 3mek
+          raki fiha.....
+        </p>
+
+        <p>
+          seyit nbedel chwiya benetli classique nzifet message simple
+          l bnedem kifek. Du coup voilà mon cadaux.
+        </p>
+
+        <p>
+          J'espère que au moin tbesemti w nti  te9ri cha dertlek
+           au moins chwiya .Profite bien de ta journée et prends
+            soin de toi ! ✨
+        </p>
+
+        <p class="signature">
+          n3ewedhelek joyeux anniversaire ♡
+        </p>
+
+        <button id="surpriseButton">7eja telya ✨</button>
+
+        <div id="surprise">
+          🌷 bonus sghir : je te souhaite plein de réussite,souvenirs
+          chebin w de belles surprises hed l 3em.
+          <p>
+            voili voilou, heda houwa cadau te3i. bonne nuit wela bonne
+            journee ca depend winta te9rih ciao Wissem !! ♡
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>fait maison ♡</footer>
+  </main>
+</div>
+
+<script>
+// J'ai fait simple pour pouvoir comprendre et modifier le site :)
+var bouton = document.getElementById('openLetter');
+var lettre = document.getElementById('letter');
+var boutonSurprise = document.getElementById('surpriseButton');
+var surprise = document.getElementById('surprise');
+
+bouton.onclick = function () {
+  lettre.classList.add('show');
+  bouton.style.display = 'none';
+  petitsCoeurs(10);
+};
+
+boutonSurprise.onclick = function () {
+  surprise.classList.add('show');
+  boutonSurprise.style.display = 'none';
+  petitsCoeurs(18);
+};
+
+function petitsCoeurs(nombre) {
+  for (var i = 0; i < nombre; i++) {
+    var coeur = document.createElement('span');
+
+    coeur.className = 'floating';
+    coeur.textContent = Math.random() > 0.5 ? '♡' : '♥';
+    coeur.style.left = Math.random() * 100 + '%';
+    coeur.style.fontSize = (16 + Math.random() * 20) + 'px';
+    coeur.style.color = Math.random() > 0.5 ? '#d9789e' : '#b98bd1';
+    coeur.style.animationDuration = (3 + Math.random() * 3) + 's';
+
+    document.body.appendChild(coeur);
+
+    setTimeout(function (element) {
+      element.remove();
+    }.bind(null, coeur), 6500);
+  }
+}
+</script>
+
+</body>
+</html>
+
